@@ -14,7 +14,7 @@ contract MyContract {
         name = _name;
     }
 
-    function getName() public view return (string memory) {
+    function getName() public view returns (string memory) {
         return name;
     }
     
