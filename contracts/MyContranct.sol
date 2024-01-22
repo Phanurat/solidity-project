@@ -1,23 +1,21 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity >=0.7.0 <0.9.0;
 
 //Create Contract
 contract MyContract {
+    string private name;
 
-    //pravate
-    string _name;
-    uint _balance;
+    constructor(string memory _name){
+        name = _name;
 
-    //default constructor
-    constructor(string memory name, uint balance){
-        //require 
-        require(balance >= 500, "Balance greater 500! (Money > 500)");
-        _name = name;
-        _balance = balance;
     }
 
-    //function public
-    function getBalance() public view  returns (uint balance){
-        return _balance;
+    function changeName(string memory _name) public {
+        name = _name;
     }
+
+    function getName() public view return (string memory) {
+        return name;
+    }
+    
 }
